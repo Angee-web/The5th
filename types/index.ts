@@ -63,6 +63,8 @@ export interface IOrder {
   user: IUser;
   items: {
     product: IProduct;
+    name: string;
+    image: string;
     size: string;
     color?: string;
     quantity: number;

@@ -4,7 +4,7 @@ import SessionProvider from "@/components/providers/SessionProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://5thjohnson.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://the5th.vercel.app"),
   title: {
     default: "5thJohnson — Women's Fashion",
     template: "%s | 5thJohnson",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://5thjohnson.com",
+    url: "https://the5th.vercel.app",
     siteName: "5thJohnson",
     title: "5thJohnson — Women's Fashion",
     description: "Curated women's fashion for the modern Nigerian woman.",

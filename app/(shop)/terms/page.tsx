@@ -18,7 +18,7 @@ export default function TermsPage() {
       <div className="space-y-8 text-sm text-brand-gray leading-relaxed">
         <section>
           <h2 className="font-serif text-xl text-brand-black mb-3">1. Acceptance of Terms</h2>
-          <p>By accessing or using the 5thJohnson website (5thjohnson.com), you agree to be bound by these Terms of Service. If you do not agree, please do not use our website.</p>
+          <p>By accessing or using the 5thJohnson website (the5th.vercel.app), you agree to be bound by these Terms of Service. If you do not agree, please do not use our website.</p>
         </section>
 
         <section>

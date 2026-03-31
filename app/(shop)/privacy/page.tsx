@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       <div className="space-y-8 text-sm text-brand-gray leading-relaxed">
         <section>
           <h2 className="font-serif text-xl text-brand-black mb-3">1. Who We Are</h2>
-          <p>5thJohnson is an online women's fashion retailer based in Nigeria. Our website is <strong className="text-brand-black">5thjohnson.com</strong>. When you use our website or place an order, you entrust us with your personal information. We take that responsibility seriously.</p>
+          <p>5thJohnson is an online women's fashion retailer based in Nigeria. Our website is <strong className="text-brand-black">the5th.vercel.app</strong>. When you use our website or place an order, you entrust us with your personal information. We take that responsibility seriously.</p>
         </section>
 
         <section>

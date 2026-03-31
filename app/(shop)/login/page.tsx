@@ -3,14 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { signIn, getSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa";
 import { HiEye, HiEyeSlash } from "react-icons/hi2";
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
+const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -21,9 +19,13 @@ export default function LoginPage() {
     const res = await signIn("credentials", { email, password, redirect: false });
     if (res?.ok) {
       toast.success("Welcome back!");
-      const session = await getSession();
-      router.push(session?.user?.role === "admin" ? "/admin" : "/");
-      router.refresh();
+      const callbackUrl = new URLSearchParams(window.location.search).get("callbackUrl");
+      if (callbackUrl) {
+        window.location.href = callbackUrl;
+      } else {
+        const session = await getSession();
+        window.location.href = session?.user?.role === "admin" ? "/admin" : "/";
+      }
     } else {
       const msg = res?.error?.startsWith("Please verify")
         ? res.error

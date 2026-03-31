@@ -9,7 +9,7 @@ export async function GET() {
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   await connectDB();
-  const user = await User.findById(session.user.id).populate("wishlist").lean();
+  const user = await User.findById(session.user.id).populate("wishlist").lean() as unknown as { wishlist: unknown[] } | null;
   return NextResponse.json(user?.wishlist || []);
 }
 
@@ -23,10 +23,10 @@ export async function POST(req: NextRequest) {
   const user = await User.findById(session.user.id);
   if (!user) return NextResponse.json({ error: "User not found" }, { status: 404 });
 
-  const isWishlisted = user.wishlist.some((id) => id.toString() === productId);
+  const isWishlisted = user.wishlist.some((id: { toString(): string }) => id.toString() === productId);
 
   if (isWishlisted) {
-    user.wishlist = user.wishlist.filter((id) => id.toString() !== productId);
+    user.wishlist = user.wishlist.filter((id: { toString(): string }) => id.toString() !== productId);
   } else {
     user.wishlist.push(productId);
   }

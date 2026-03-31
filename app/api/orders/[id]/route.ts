@@ -10,12 +10,12 @@ export async function GET(_req: NextRequest, { params }: { params: { id: string 
 
   try {
     await connectDB();
-    const order = await Order.findById(params.id).populate("user", "name email").lean();
+    const order = await Order.findById(params.id).populate("user", "name email").lean() as unknown as { user: { _id: { toString(): string } } } | null;
     if (!order) return NextResponse.json({ error: "Order not found" }, { status: 404 });
 
     if (
       session.user.role !== "admin" &&
-      (order.user as { _id: { toString(): string } })._id.toString() !== session.user.id
+      order.user._id.toString() !== session.user.id
     ) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }

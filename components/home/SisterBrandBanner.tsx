@@ -15,7 +15,7 @@ export default function SisterBrandBanner() {
         <p className="text-sm text-[#6b2d4e]">
           <span className="font-semibold">New!</span> We&apos;ve started a brand just for your little ones —{" "}
           <a
-            href={process.env.NEXT_PUBLIC_LSW_URL || "https://www.littleseriouswomen.com"}
+            href={process.env.NEXT_PUBLIC_LSW_URL || "https://little-serious-women-d1b7-dusky.vercel.app/"}
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 font-semibold hover:text-[#ec4899] transition-colors"

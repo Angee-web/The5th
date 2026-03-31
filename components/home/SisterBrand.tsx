@@ -71,7 +71,7 @@ export default function SisterBrand() {
         </motion.p>
 
         <motion.a
-          href={process.env.NEXT_PUBLIC_LSW_URL || "https://www.littleseriouswomen.com"}
+          href={process.env.NEXT_PUBLIC_LSW_URL || "https://little-serious-women-d1b7-dusky.vercel.app/"}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 16 }}
